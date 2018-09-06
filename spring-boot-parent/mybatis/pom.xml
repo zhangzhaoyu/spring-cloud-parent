@@ -5,7 +5,6 @@
 
 	<groupId>cn.cincout.distribute</groupId>
 	<artifactId>mybatis</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>mybatis</name>
@@ -13,7 +12,7 @@
 
 	<parent>
 		<groupId>cn.cincout.distribute</groupId>
-		<artifactId>spring-cloud-parent</artifactId>
+		<artifactId>spring-boot-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

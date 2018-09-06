@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="helloService" class="cn.cincout.distribute.spring.basic.beans.HelloServiceImpl" />
+
+    <!-- inner class -->
+    <bean id="dog" class="cn.cincout.distribute.spring.basic.beans.Dog" />
+    <bean id="foot" class="cn.cincout.distribute.spring.basic.beans.Dog$Foot" />
+
+    <!-- factory static method -->
+    <bean id="dog2" name="dog2x" class="cn.cincout.distribute.spring.basic.beans.DogCreateFactory"
+          factory-method="createDog"/>
+    <!-- factory no static method -->
+    <bean id="dogCreateFactory" class="cn.cincout.distribute.spring.basic.beans.DogCreateFactory" />
+    <bean id="dog3" class="cn.cincout.distribute.spring.basic.beans.DogCreateFactory"
+          factory-bean="dogCreateFactory"
+          factory-method="noStaticCreateDog" />
+
+    <!-- ioc constructor-->
+    <bean id="bar" class="cn.cincout.distribute.spring.basic.ioc.Bar" />
+    <bean id="baz" class="cn.cincout.distribute.spring.basic.ioc.Baz" />
+    <bean id="foo" class="cn.cincout.distribute.spring.basic.ioc.Foo">
+        <constructor-arg ref="bar" />
+        <constructor-arg ref="baz" />
+        <property name="dog" ref="dog" />
+    </bean>
+
+    <bean id="collectionObj" class="cn.cincout.distribute.spring.basic.beans.CollectionsObject">
+        <property name="email" value="" />
+        <property name="name">
+            <null />
+        </property>
+    </bean>
+
+    <!-- need this for @PostConstruct to work-->
+    <context:annotation-config/>
+</beans>

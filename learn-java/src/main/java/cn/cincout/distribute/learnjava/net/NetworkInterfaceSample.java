@@ -1,7 +1,5 @@
 package cn.cincout.distribute.learnjava.net;
 
-import sun.nio.ch.Net;
-
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
