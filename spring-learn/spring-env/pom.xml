@@ -20,6 +20,7 @@
 	<modules>
 		<module>spring-env-one</module>
 		<module>spring-env-two</module>
+		<module>spring-boot-env</module>
 	</modules>
 
 	<dependencies>

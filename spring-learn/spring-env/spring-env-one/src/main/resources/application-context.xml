@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="propertySourcesPlaceholderConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:hbase.properties</value>
+            </list>
+        </property>
+        <property name="order" value="2147483640" />
+    </bean>
+    <bean id="hbaseConfigService" class="cn.cincout.distribute.springenv.one.service.HbaseConfigService" init-method="postConstruct">
+        <property name="host" value="${hbase.host}"/>
+        <property name="port" value="${hbase.port}"/>
+    </bean>
+</beans>

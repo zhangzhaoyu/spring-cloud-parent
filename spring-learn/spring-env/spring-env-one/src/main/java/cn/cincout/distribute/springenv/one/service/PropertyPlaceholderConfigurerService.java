@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
  * @author zhaoyu
  * @sine 1.8
  */
-@Component
+//@Component
 public class PropertyPlaceholderConfigurerService {
     @Autowired
     private Environment environment;

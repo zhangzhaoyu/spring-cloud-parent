@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
  * @sine 1.8
  */
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:application-config.properties")
 public class PropertiesConfig {
 
 }
