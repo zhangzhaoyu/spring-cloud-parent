@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apollo Config Value Show</title>
+    <script th:src="@{/js/jquery.js}"></script>
+    <script>
+
+        jQuery(function ($) {
+            setInterval(getApolloConfig, 3000);
+            function getApolloConfig() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/apolloConfig',
+                    async: true,
+                    timeout: 5000,
+                    dataType: 'json',
+                    success: function (data, textStatus, jqXHR) {
+                        $("#val").append(new Date().toDateString() + " : apolloString is " + data.apolloString + ", apolloInt is " + data.apolloInt + "<br/>");
+                    }
+                });
+            };
+
+            $("#clear").click(
+                function clear() {
+                    $("#val").empty();
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <h1>实时获取应用【spring-boot-env】Apollo 配置中心的值：</h1>
+    <h2><button id="clear">清空</button></h2>
+    <div id="val" style="font-size: 18px">
+
+    </div>
+</body>
+</html>
