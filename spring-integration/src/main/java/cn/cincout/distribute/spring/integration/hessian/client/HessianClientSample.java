@@ -15,7 +15,8 @@ public class HessianClientSample {
     private final static String HESSIAN_SERVICE_URL = "http://localhost:8080/hessian/hello";
     public static void main(String[] args) {
         HessianProxyFactory factory = new HessianProxyFactory();
-        factory.setReadTimeout(10000);
+        factory.setReadTimeout(5000);
+        factory.setConnectTimeout(5000);
 
         try {
             HelloService helloService = (HelloService) factory.create(HelloService.class, HESSIAN_SERVICE_URL);

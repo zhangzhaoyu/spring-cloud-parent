@@ -45,11 +45,20 @@
             <version>1.0.0</version>
         </dependency>
 
+		<!--<dependency>
+			<groupId>cn.cincout.distribute</groupId>
+			<artifactId>spring-env-one</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>-->
+
 		<dependency>
 			<groupId>cn.cincout.distribute</groupId>
 			<artifactId>spring-env-one</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/spring-env-one-0.0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -64,7 +73,33 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources/lib/</directory>
+                <targetPath>BOOT-INF/lib/</targetPath>
+                <includes>
+                    <include>**/*.jar</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/application*.yml</include>
+                    <include>**/application*.yaml</include>
+                    <include>**/application*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/application*.yml</exclude>
+                    <exclude>**/application*.yaml</exclude>
+                    <exclude>**/application*.properties</exclude>
+                </excludes>
+            </resource>
+
+        </resources>
 	</build>
-
-
 </project>
