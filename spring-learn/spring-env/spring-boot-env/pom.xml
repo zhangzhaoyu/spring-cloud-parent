@@ -12,9 +12,9 @@
 	<description>Demo project for Spring Boot Env</description>
 
 	<parent>
-        <groupId>cn.cincout.distribute</groupId>
-        <artifactId>spring-cloud-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.5.RELEASE</version>
 	</parent>
 
 	<properties>
