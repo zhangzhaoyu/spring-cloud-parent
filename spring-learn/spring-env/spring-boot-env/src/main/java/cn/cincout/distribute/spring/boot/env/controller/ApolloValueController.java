@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -49,5 +50,27 @@ public class ApolloValueController {
     public String forward(HttpServletRequest request) {
         System.out.println("forward val : " + request.getAttribute("val"));
         return "good";
+    }
+
+    @GetMapping("/request")
+    @ResponseBody
+    public Map<String, String> requestParams(HttpServletRequest request) {
+        Map<String, String> result = new HashMap<>();
+        result.put("request.getContextPath", request.getContextPath());
+        result.put("request.getPathInfo", request.getPathInfo());
+        result.put("request.getPathTranslated", request.getPathTranslated());
+        result.put("request.getQueryString", request.getQueryString());
+        result.put("request.getRemoteUser", request.getRemoteUser());
+        result.put("request.getRequestURI", request.getRequestURI());
+        result.put("request.getServletPath", request.getServletPath());
+        result.put("request.getLocalAddr", request.getLocalAddr());
+        result.put("request.getLocalName", request.getLocalName());
+        result.put("request.getRemoteAddr", request.getRemoteAddr());
+        result.put("request.getRemoteHost", request.getRemoteHost());
+        result.put("request.getRemotePort", String.valueOf(request.getRemotePort()));
+        result.put("request.getServerPort", String.valueOf(request.getServerPort()));
+        result.put("request.getServerName", request.getServerName());
+        result.put("request.getScheme", request.getScheme());
+        return result;
     }
 }

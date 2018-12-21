@@ -28,9 +28,11 @@ public class SocketClient {
             String info = null;
             while ((info = br.readLine()) != null) {
                 System.out.println("我是客户端，服务器说：" + info);
-
             }
             socket.shutdownInput();
+
+            System.out.println("isClosed: " + socket.isClosed());
+            System.out.println("isConnected: " + socket.isConnected());
 
             //关闭资源
             br.close();

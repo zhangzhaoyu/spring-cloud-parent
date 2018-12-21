@@ -1,7 +1,5 @@
 package cn.cincout.distribute.spring.mvc.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -10,7 +8,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * @author zhaoyu
  * @sine 1.8
  */
-@EnableWebMvc
+
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {

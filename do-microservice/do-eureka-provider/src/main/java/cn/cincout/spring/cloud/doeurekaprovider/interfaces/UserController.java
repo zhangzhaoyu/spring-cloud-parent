@@ -28,6 +28,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    // @GetMapping(value = "/users/{id}", produces = { "application/json;charset=UTF-8" })
     @GetMapping(value = "/users/{id}")
     public User findById(@PathVariable(name = "id") Integer id) {
         // ServiceInstance serviceInstance = discoveryClient.getLocalServiceInstance();

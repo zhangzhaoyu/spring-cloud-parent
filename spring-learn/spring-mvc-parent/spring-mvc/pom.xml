@@ -6,7 +6,7 @@
 	<groupId>cn.cincout.distribute</groupId>
 	<artifactId>spring-mvc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>spring-mvc</name>
 	<description>Demo project for Spring mvc</description>
