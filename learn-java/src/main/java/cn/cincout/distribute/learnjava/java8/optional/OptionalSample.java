@@ -1,4 +1,4 @@
-package cn.cincout.distribute.learnjava.java8;
+package cn.cincout.distribute.learnjava.java8.optional;
 
 import lombok.Data;
 
@@ -20,6 +20,7 @@ public class OptionalSample {
         Optional<Person> result = new OptionalSample().findMan("zhang");
         Person person = result.get();
         System.out.println(person.toString());
+
     }
 }
 @Data
